@@ -132,6 +132,13 @@ ngJSTree.directive('jsTree', ['$http', function($http) {
                             };
                         }
                     };
+
+                    if (a.treeAjaxAuthorization) {
+                        config.core.data.headers = {
+                            'Authorization': s[a.treeAjaxAuthorization]
+                        };
+                    }
+
                     treeDir.init(s, e, a, config);
                 }
             });
